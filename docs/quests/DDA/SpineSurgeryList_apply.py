@@ -24,7 +24,7 @@ def surgery_time(x):
     except:
         pass
 pass
-df['수술시간_datetime'] = df["수술시간"].apply(surgery_time_time)
+df['수술시간_datetime'] = df["수술시간"].apply(lambda x: pd.to_datetime(f"{int(x/60)}, {int(x%60)}", format="%H, %M") if int(x/60) != 0 else pd.to_datetime(f"{int(x%60)}", format="%M"))
 df['수술시간_datetime'] = df['수술시간_datetime'].dt.time
 pass
 
