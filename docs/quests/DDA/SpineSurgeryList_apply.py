@@ -14,7 +14,7 @@ df['BMI'] = df['체중'] / df['신장']
 # 분을 시간과 분 형태의 문자열로 변환하고, 이를 datetime 형식으로 변환하는 함수
 def surgery_time(minutes):
     if pd.isnull(minutes):
-        return np.nan       #Nan
+        return np.nan      # Ref : https://cosmosproject.tistory.com/367 
     else:
         hours = minutes // 60
         minutes = minutes % 60
